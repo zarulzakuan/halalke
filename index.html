@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="ZXing for JS">
+  <meta name="zarulzakuan" content="barcode scanner">
 
-  <title>ZXing TypeScript | Decoding from camera stream</title>
+  <title>Mobile Barcode Scanner</title>
 
   <link rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null"
     href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
@@ -21,16 +21,7 @@
   <main class="wrapper" style="padding-top:2em">
 
     <section class="container" id="demo-content">
-      <h1 class="title">Scan 1D/2D Code from Video Camera</h1>
-
-      <p>
-        <a class="button-small button-outline" href="../../index.html">HOME 🏡</a>
-      </p>
-
-      <p>This example shows how to scan any supported 1D/2D code with ZXing javascript library from the device video
-        camera. If more
-        than one video input devices are available (for example front and back camera) the example shows how to read
-        them and use a select to change the input device.</p>
+      <h1 class="title">Barcode Scanner</h1>
 
       <div>
         <a class="button" id="startButton">Start</a>
@@ -41,25 +32,7 @@
         <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
       </div>
 
-      <div id="sourceSelectPanel" style="display:none">
-        <label for="sourceSelect">Change video source:</label>
-        <select id="sourceSelect" style="max-width:400px">
-        </select>
-      </div>
 
-      <label>Result:</label>
-      <pre><code id="result"></code></pre>
-
-      <p>See the <a href="https://github.com/zxing-js/library/tree/master/docs/examples/multi-camera/">source code</a>
-        for this example.</p>
-    </section>
-
-    <footer class="footer">
-      <section class="container">
-        <p>ZXing TypeScript Demo. Licensed under the <a target="_blank"
-            href="https://github.com/zxing-js/library#license" title="MIT">MIT</a>.</p>
-      </section>
-    </footer>
 
   </main>
 
@@ -71,23 +44,11 @@
       console.log('ZXing code reader initialized')
       codeReader.getVideoInputDevices()
         .then((videoInputDevices) => {
-          const sourceSelect = document.getElementById('sourceSelect')
-          selectedDeviceId = videoInputDevices[0].deviceId
-          if (videoInputDevices.length >= 1) {
-            videoInputDevices.forEach((element) => {
-              const sourceOption = document.createElement('option')
-              sourceOption.text = element.label
-              sourceOption.value = element.deviceId
-              sourceSelect.appendChild(sourceOption)
-            })
-
-            sourceSelect.onchange = () => {
-              selectedDeviceId = sourceSelect.value;
-            };
-
-            const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-            sourceSelectPanel.style.display = 'block'
-          }
+          selectedDeviceId = videoInputDevices.filter(device => {
+            if (/back|rear|environment/gi.test(device.label)) {
+              return device
+            }
+          })
 
           document.getElementById('startButton').addEventListener('click', () => {
             codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
