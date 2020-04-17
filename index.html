@@ -46,11 +46,7 @@
       console.log('ZXing code reader initialized')
       codeReader.getVideoInputDevices()
         .then((videoInputDevices) => {
-          selectedDeviceId = videoInputDevices.filter(device => {
-            if (/back|rear|environment/gi.test(device.label)) {
-              return device
-            }
-          })
+          
 
           document.getElementById('startButton').addEventListener('click', () => {
             codeReader.decodeFromVideoDevice(undefined, 'video', (result, err) => {
