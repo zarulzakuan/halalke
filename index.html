@@ -24,10 +24,7 @@
       <div class="columns is-mobile">
         <div class="column is-11 is-offset-1">
           <h1 class="title">Barcode Scanner</h1>
-          <button class="button is-success" id="startButton">Start Scanning</button>
-          <div>
-            <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
-          </div>
+          <button class="button is-success" id="startButton" onclick="toggleCameraModal();">Start Scanning</button>
           <div class="field">
             <div class="control">
               <input class="input is-success" id="result" type="text" placeholder="Barcode #">
@@ -40,11 +37,12 @@
     </div>
   </section>
 
-  <div class="modal">
+  <!-- Result Modal -->
+  <div class="modal" id="resultModal">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Modal title</p>
+        <p class="modal-card-title">Result</p>
         <button class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
@@ -56,6 +54,26 @@
       </footer>
     </div>
   </div>
+
+  <!-- Camera Modal -->
+
+  <div class="modal" id="cameraModal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Scanning...</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button">Cancel</button>
+      </footer>
+    </div>
+  </div>
+
+
 </body>
 
 <body>
