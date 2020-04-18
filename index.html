@@ -18,20 +18,19 @@
 </head>
 
 <body>
-  <main class="wrapper" style="padding-top:2em">
-    <section class="container" id="demo-content">
-      <h1 class="title">Barcode Scanner</h1>
-      <div>
-        <a class="button" id="startButton">Check</a>
-        <!-- <a class="button" id="resetButton">Reset</a> -->
+
+  <section class="section" id="scanner">
+    <h1 class="title">Barcode Scanner</h1>
+    <button class="button is-success" id="startButton">Start Scanning</button>
+    <div>
+      <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+    </div>
+    <div class="field">
+      <div class="control">
+        <input class="input is-success" id="result" type="text" placeholder="Barcode #">
       </div>
-      <div>
-        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
-      </div>
-      <label>Result:</label>
-      <pre><code id="result"></code></pre>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <div class="modal">
     <div class="modal-background"></div>
@@ -49,6 +48,14 @@
       </footer>
     </div>
   </div>
+</body>
+
+<body>
+  <main class="wrapper" style="padding-top:2em">
+
+  </main>
+
+
 
 
   <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
