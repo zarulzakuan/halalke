@@ -14,12 +14,13 @@ window.addEventListener('load', function () {
                         document.getElementById('result').textContent = err
                     }
                 })
+                getEntry();
             })
-            document.getElementById('resetButton').addEventListener('click', () => {
-                codeReader.reset()
-                document.getElementById('result').textContent = '';
-                console.log('Reset.')
-            })
+            // document.getElementById('resetButton').addEventListener('click', () => {
+            //     codeReader.reset()
+            //     document.getElementById('result').textContent = '';
+            //     console.log('Reset.')
+            // })
         })
         .catch((err) => {
             console.error(err)
