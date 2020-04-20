@@ -6,15 +6,20 @@ window.addEventListener('load', function () {
             document.getElementById('startButton').addEventListener('click', () => {
                 codeReader.decodeFromVideoDevice(undefined, 'video', (result, err) => {
                     if (result) {
-                        console.log(result)
+                        //console.log(result)
                         document.getElementById('result').textContent = result.text
+                        toggleCameraModal();
+                        getEntry("1234567890128");
+                        
                     }
                     if (err && !(err instanceof ZXing.NotFoundException)) {
                         console.error(err)
                         document.getElementById('result').textContent = err
+                        
+                        
                     }
                 })
-                getEntry();
+                
             })
             // document.getElementById('resetButton').addEventListener('click', () => {
             //     codeReader.reset()

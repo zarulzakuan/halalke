@@ -24,7 +24,7 @@
     <div class="container has-text-centered">
       <div class="columns is-mobile">
         <div class="column is-12">
-          <h1 class="title">Barcode Scanner</h1>
+          <h1 class="title">IsItHalal?</h1>
           <button class="button is-success" id="startButton" onclick="toggleCameraModal();">Start Scanning</button>
           <p>... or enter Barcode #</p>
           <div class="field has-addons">
@@ -54,6 +54,36 @@
       </header>
       <section class="modal-card-body">
         <!-- Content ... -->
+
+        <div class="field">
+          <img id="pPhoto" src="">
+        </div>
+        
+        <div class="field">
+          <label class="label">Halal?</label>
+          <div class="control">
+            <input id="pHalal" type="text">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input id="pName" type="text">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Ingredients</label>
+          <div class="control">
+            <textarea id="pIngredients" type="text"></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Info</label>
+          <div class="control">
+            <textarea id="pInfo" type="text"></textarea>
+          </div>
+        </div>
+       
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success">Save changes</button>
@@ -82,7 +112,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Halal-ke?</strong> by <a href="https://github.com/zarulzakuan/">Zarul Zakuan</a>. The source code is licensed
+        <strong>IsItHalal</strong> by <a href="https://github.com/zarulzakuan/">IsItHalal Org</a>. The source code is licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
         is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
       </p>
