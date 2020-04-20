@@ -23,12 +23,18 @@
   <section class="section" id="scanner">
     <div class="container has-text-centered">
       <div class="columns is-mobile">
-        <div class="column is-11 is-offset-1">
+        <div class="column is-12">
           <h1 class="title">Barcode Scanner</h1>
           <button class="button is-success" id="startButton" onclick="toggleCameraModal();">Start Scanning</button>
-          <div class="field">
+          <p>... or enter Barcode #</p>
+          <div class="field has-addons">
             <div class="control">
               <input class="input is-success" id="result" type="text" placeholder="Barcode #">
+            </div>
+            <div class="control">
+              <a class="button is-info">
+                Search
+              </a>
             </div>
           </div>
 
@@ -66,14 +72,22 @@
         <button class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+        <video id="video" width="auto" height="auto" style="border: 1px solid gray"></video>
       </section>
       <footer class="modal-card-foot">
         <button class="button">Cancel</button>
       </footer>
     </div>
   </div>
-
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Halal-ke?</strong> by <a href="https://github.com/zarulzakuan/">Zarul Zakuan</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
 
 </body>
 
