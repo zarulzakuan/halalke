@@ -3,6 +3,7 @@ function getEntry(id) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             var entryInfo = JSON.parse(xhr.responseText);
+            document.getElementById('stopCamera').click();
             toggleResultModal(entryInfo);
         }
     };
