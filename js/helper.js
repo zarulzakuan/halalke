@@ -13,6 +13,7 @@ function toggleCameraModal() {
             e.preventDefault();
             modal.classList.remove('is-active');
             html.classList.remove('is-clipped');
+            document.getElementById('stopCamera').click();
         });
     }
 
@@ -31,19 +32,45 @@ function toggleResultModal(info) {
         modal.classList.add('is-active');
         html.classList.add('is-clipped');
 
-        var pName = document.querySelector('#pName');
-        var pManufacturer = document.querySelector('#pManufacturer');
-        var pHalal = document.querySelector('#pHalal');
-        var pPhoto = document.querySelector('#pPhoto');
-        var pIngredients = document.querySelector('#pIngredients');
-        var pInfo = document.querySelector('#pInfo');
-        var pSubmitter = document.querySelector('#pSubmitter');
 
-        pName.value = info.name;
-        pPhoto.src = info.photopath;
-        pHalal.value = info.halal;
-        pInfo.innerHTML = info.info;
-        pIngredients.value = info.ingredients;
+        if (info.halal !== "") {
+            var pName = document.querySelector('#pName');
+            var pManufacturer = document.querySelector('#pManufacturer');
+            var pStatusImg = document.querySelector('#pStatusImg');
+            var pStatusText = document.querySelector('#pStatusTxt');
+            
+            var pPhoto = document.querySelector('#pPhoto');
+            var pIngredients = document.querySelector('#pIngredients');
+            var pInfo = document.querySelector('#pInfo');
+            var pSubmitter = document.querySelector('#pSubmitter');
+
+            pName.innerHTML = info.name;
+            pPhoto.src = info.photopath;
+            pInfo.innerHTML = info.info;
+            pIngredients.innerHTML = info.ingredients;
+
+            if (info.halal == "yes") {
+                pStatusImg.src = "resources/images/thumbs-up.svg";
+                pStatusText.innerHTML = "Halal";
+                pStatusText.style.color = "lime";
+            } else if (info.halal == "no") {
+                pStatusImg.src = "resources/images/thumbs-down.svg";
+                pStatusText.innerHTML = "Non-Halal";
+                pStatusText.style.color = "red";
+            } else if (info.halal == "syubhah") {
+                pStatusImg.src = "resources/images/exclamation.svg";
+                pStatusText.innerHTML = "Syubhah";
+                pStatusText.style.color = "orange";
+            } else {
+                pStatusImg.src = "resources/images/question.svg";
+                pStatusText.innerHTML = "No Info";
+                pStatusText.style.color = "grey";
+            }
+        } else {
+
+        }
+
+
 
         modal.querySelector('.modal-background').addEventListener('click', function (e) {
             e.preventDefault();
