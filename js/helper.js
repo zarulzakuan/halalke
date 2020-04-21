@@ -77,5 +77,11 @@ function toggleResultModal(info) {
             modal.classList.remove('is-active');
             html.classList.remove('is-clipped');
         });
+        modal.querySelector('.modal-closer').addEventListener('click', function (e) {
+            e.preventDefault();
+            modal.classList.remove('is-active');
+            html.classList.remove('is-clipped');
+        });
+        
     }
 }
