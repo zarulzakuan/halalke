@@ -13,12 +13,19 @@ window.addEventListener('load', function () {
 
             accessToken = authResult.accessToken;
             profile = profileResult;
+            localStorage.setItem('userToken', accessToken);
+            localStorage.setItem('userProfile', JSON.stringify(profile));
 
             // Update DOM
         });
     });
     document.getElementById('btn-login').addEventListener('click', function () {
         lock.show();
+    });
+
+    document.getElementById('btn-logout').addEventListener('click', function () {
+        localStorage.removeItem('userToken');
+        localStorage.removeItem('userProfile');
     });
 
 
