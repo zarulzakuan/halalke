@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="zarulzakuan" content="barcode scanner">
 
   <title>Mobile Barcode Scanner</title>
@@ -19,9 +19,9 @@
   <script type="text/javascript" src="./js/helper.js"></script>
   <script src="https://cdn.auth0.com/js/lock/11.23.1/lock.min.js"></script>
   <script type="text/javascript" src="./js/auth.js"></script>
-  
 
-  
+
+
 </head>
 
 <body>
@@ -30,6 +30,8 @@
     <div class="container has-text-centered">
       <div class="columns is-mobile">
         <div class="column is-12">
+          <img id="welcomeImg" style="display:none" height="64px" width="64px" src="https://lh3.googleusercontent.com/a-/AOh14Gi8VGjkGfH-0M24XsAu1Olk6ZvFk7jhSWg_801kbw">
+          <h2 id="welcomeTxt" style="display:none"></h2>
           <h1 class="title">IsItHalal?</h1>
           <button class="button is-success" id="startButton" onclick="toggleCameraModal();">Start Scanning</button>
           <button style="display:none" id="stopCamera">Stop</button>
@@ -43,12 +45,12 @@
                 Search
               </a>
             </div>
-            
+
           </div>
 
-            <a id="btn-login" class="button is-info">
-              Login
-            </a>
+          <a id="btn-login" class="button is-info">
+            Login
+          </a>
 
         </div>
       </div>

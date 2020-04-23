@@ -13,8 +13,14 @@ window.addEventListener('load', function () {
 
             accessToken = authResult.accessToken;
             profile = profileResult;
+            var welcomeTxt = document.querySelector('#welcomeTxt');
+            var welcomeImg = document.querySelector('#welcomeImg');
             localStorage.setItem('userToken', accessToken);
             localStorage.setItem('userProfile', JSON.stringify(profile));
+            welcomeTxt.innerHTML = "Welcome " + profile.nickname + "!";
+            welcomeTxt.style.display = "block";
+            welcomeImg.src = profile.picture;
+            welcomeImg.style.display = "block";
 
             // Update DOM
         });
@@ -24,8 +30,12 @@ window.addEventListener('load', function () {
     });
 
     document.getElementById('btn-logout').addEventListener('click', function () {
+        var welcomeTxt = document.querySelector('#welcomeTxt');
+        var welcomeImg = document.querySelector('#welcomeImg');
         localStorage.removeItem('userToken');
         localStorage.removeItem('userProfile');
+        welcomeTxt.style.display = "block";
+        welcomeImg.style.display = "block";
     });
 
 
