@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="zarulzakuan" content="barcode scanner">
 
   <title>Mobile Barcode Scanner</title>
@@ -17,6 +17,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="./js/helper.js"></script>
+  <script src="https://cdn.auth0.com/js/lock-8.1.min.js"></script>
+  <script type="text/javascript" src="./js/auth.js"></script>
+  
+
+  
 </head>
 
 <body>
@@ -38,6 +43,7 @@
                 Search
               </a>
             </div>
+            <button id="btn-login" class="btn-login">Sign In</button>
           </div>
 
         </div>
