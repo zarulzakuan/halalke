@@ -1,4 +1,5 @@
 window.addEventListener('load', function () {
+    var lock = new Auth0Lock('udGE155TdWI7SL0ZM2w316kMYRFHSpLM', 'isithalaldev.auth0.com');
 
     document.getElementById('btn-login').addEventListener('click', function () {
         lock.show();
